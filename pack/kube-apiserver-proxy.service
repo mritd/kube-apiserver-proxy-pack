@@ -1,0 +1,16 @@
+[Unit]
+Description=Kubernetes Api Server Proxy Tool(nginx)
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/var/run/kube-apiserver-proxy.pid
+ExecStartPre=/usr/bin/kube-apiserver-proxy -t -q -g 'daemon on; master_process on;'
+ExecStart=/usr/bin/kube-apiserver-proxy -g 'daemon on; master_process on;'
+ExecReload=/usr/bin/kube-apiserver-proxy -g 'daemon on; master_process on;' -s reload
+ExecStop=-/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /var/run/kube-apiserver-proxy.pid
+TimeoutStopSec=5
+KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target
