@@ -40,7 +40,7 @@ function fix_permissions(){
     chmod 755 ${BIN}
     chmod 644 ${SYSTEMD_SERVICE}
 
-    chown -R kube:kube ${BIN} ${CONFIG}
+    chown -R root:root ${BIN} ${CONFIG}
     chown root:root ${SYSTEMD_SERVICE}
 }
 

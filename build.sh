@@ -13,8 +13,8 @@ NGINX_CONFIG_ARGS="\
     --lock-path=/var/run/kube-apiserver-proxy.lock \
     --sbin-path=/usr/bin/kube-apiserver-proxy \
     --conf-path=/etc/kubernetes/apiserver-proxy.conf \
-    --user=kube \
-    --group=kube \
+    --user=root \
+    --group=root \
     --with-debug \
     --with-file-aio \
     --with-threads \
