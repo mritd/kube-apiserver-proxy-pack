@@ -14,7 +14,7 @@ NGINX_CONFIG_ARGS="\
     --sbin-path=/usr/bin/kube-apiserver-proxy \
     --conf-path=/etc/kubernetes/apiserver-proxy.conf \
     --user=nobody \
-    --group=nobody \
+    --group=nogroup \
     --with-debug \
     --with-file-aio \
     --with-threads \
