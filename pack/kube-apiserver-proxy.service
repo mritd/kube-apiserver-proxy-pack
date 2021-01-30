@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=forking
-PIDFile=/var/run/kube-apiserver-proxy.pid
+PIDFile=/run/kube-apiserver-proxy.pid
 ExecStartPre=/usr/bin/kube-apiserver-proxy -t -q -g 'daemon on; master_process on;'
 ExecStart=/usr/bin/kube-apiserver-proxy -g 'daemon on; master_process on;'
 ExecReload=/usr/bin/kube-apiserver-proxy -g 'daemon on; master_process on;' -s reload
