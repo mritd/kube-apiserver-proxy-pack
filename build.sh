@@ -33,7 +33,7 @@ NGINX_CONFIG_ARGS="\
 check_version(){
     if [ -z "${NGINX_VERSION}" ]; then
         warn "nginx version not specified, use default version 1.19.6."
-        NGINX_VERSION="1.19.6"
+        NGINX_VERSION="1.19.7"
     fi
 }
 
