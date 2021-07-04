@@ -3,6 +3,7 @@
 set -e
 
 NGINX_VERSION=${1}
+NGINX_DEFAULT_VERSION="1.21.0"
 MAKESELF_VERSION=${MAKESELF_VERSION:-"2.4.3"}
 MAKESELF_INSTALL_DIR=$(mktemp -d makeself.XXXXXX)
 
@@ -32,8 +33,8 @@ NGINX_CONFIG_ARGS="\
 
 check_version(){
     if [ -z "${NGINX_VERSION}" ]; then
-        warn "nginx version not specified, use default version 1.20.0."
-        NGINX_VERSION="1.20.0"
+        warn "nginx version not specified, use default version ${NGINX_DEFAULT_VERSION}."
+        NGINX_VERSION=${NGINX_DEFAULT_VERSION}
     fi
 }
 
